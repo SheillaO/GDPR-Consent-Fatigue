@@ -168,3 +168,43 @@ consentvault/
 
 ---
 
+## 🚦 Run Locally
+
+```bash
+# Clone repo
+git clone https://github.com/SheillaO/ConsentVault.git
+cd ConsentVault
+
+# Open in browser
+open index.html
+
+# Or use a local server
+python3 -m http.server 8000
+# Navigate to localhost:8000
+```
+
+**No build process. No dependencies. Just open and run.**
+
+---
+
+## 🔗 Related Projects
+
+This project is part of my portfolio showcasing JavaScript fundamentals and product thinking:
+
+### 💊 [GLP-1 Companion](https://github.com/SheillaO/GLP-1-Companion)
+**Healthcare utility** - Conversion tool for 40M+ users on weight-loss medications  
+**Tech:** Vanilla JS, LocalStorage, FormData API
+
+### 🌊 [Bahari Leads](https://github.com/SheillaO/Bahari-Leads)
+**B2B SaaS** - Lead management Chrome extension for emerging markets  
+**Tech:** Chrome Extension API, LocalStorage, B2B positioning
+
+### 🎨 [OldGram](https://github.com/SheillaO/Instagram-Clone)
+**Social media** - Instagram clone with "New to You" filter and sentiment analysis  
+**Tech:** Advanced DOM manipulation, localStorage, event handling
+
+### 🔐 [AI-Proof Password Generator](https://github.com/SheillaO/AI-Proof-Password-Generator)
+**Security** - Cryptographically secure passwords (vs AI-generated weak ones)  
+**Tech:** Web Crypto API, competitive positioning
+
+---
