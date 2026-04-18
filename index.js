@@ -90,7 +90,7 @@ consentForm.addEventListener("submit", function (e) {
   showLoadingSequence(websiteName, riskScore);
 });
 
-/ ========== LOADING SEQUENCE ==========
+
 function showLoadingSequence(websiteName, riskScore) {
     modalText.innerHTML = `
     <div class="modal-inner-loading">
@@ -432,3 +432,7 @@ footer a {
 }
 `;
 
+
+const styleSheet = document.createElement("style");
+styleSheet.textContent = brandStyles;
+document.head.appendChild(styleSheet);
