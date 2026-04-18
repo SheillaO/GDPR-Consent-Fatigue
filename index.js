@@ -177,3 +177,21 @@ function filterByDarkPatterns() {
     return consents.filter(consent => consent.darkPatternUsed)
 }
 
+// ========== SORTING ==========
+function sortConsents(sortBy) {
+    const consents = getConsents()
+    
+    switch(sortBy) {
+        case 'date-new':
+            return consents.reverse()
+        case 'date-old':
+            return consents
+        case 'risk-high':
+            return consents.sort((a, b) => b.riskScore - a.riskScore)
+        case 'risk-low':
+            return consents.sort((a, b) => a.riskScore - b.riskScore)
+        default:
+            return consents
+    }
+}
+
