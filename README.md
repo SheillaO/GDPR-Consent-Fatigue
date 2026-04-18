@@ -60,3 +60,9 @@ See all your active consents in one place with:
 
 ---
 
+
+### Core Technologies
+- **HTML5** - Semantic structure
+- **CSS3** - Clean, accessible design
+- **Vanilla JavaScript** - No frameworks, pure JS
+- **LocalStorage API** - Client-side data persistence
