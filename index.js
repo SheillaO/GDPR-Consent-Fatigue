@@ -367,3 +367,41 @@ const brandStyles = `
     font-size: 1.1rem;
     color: var(--black);
 }
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--gray-700);
+    line-height: 1.5;
+}
+
+.hero-actions {
+    margin-top: 24px;
+}
+
+.small-text {
+    font-size: 12px;
+    color: var(--gray-700);
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.info-block {
+    background: var(--gray-50);
+    padding: 32px;
+    border-radius: 12px;
+    margin-top: 40px;
+  
+}
+    .info-block h3 {
+    margin-bottom: 12px;
+    color: var(--black);
+}
+
+.info-block ul {
+    padding-left: 20px;
+}
+
+.info-block li {
+    margin-bottom: 10px;
+    color: var(--gray-700);
+}
