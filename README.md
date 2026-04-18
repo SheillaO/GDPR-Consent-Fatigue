@@ -1,8 +1,8 @@
 # ConsentVault - Personal GDPR Consent Manager
 
 > *"Track the trackers. Manage your digital consent in one place."*
->
-> <img width="1603" height="857" alt="GDPR Consent " src="https://github.com/user-attachments/assets/73a203c0-685c-4f1f-8ffd-6253fbd6b2bb" />
+
+<img width="1603" height="857" alt="GDPR Consent " src="https://github.com/user-attachments/assets/73a203c0-685c-4f1f-8ffd-6253fbd6b2bb" />
 
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success)](https://gdprconsentfatigue.netlify.app/)
