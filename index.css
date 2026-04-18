@@ -257,3 +257,27 @@ main {
     text-align: right;
     padding: 16px;
 }
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--gray-700);
+    cursor: pointer;
+}
+
+.modal-close-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.modal-inner {
+    padding: 0 32px 32px;
+}
+
+.modal-inner h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
