@@ -106,3 +106,24 @@ main {
     font-family: inherit;
 }
 
+.search-bar:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn, .export-btn {
+    padding: 12px 20px;
+    border: 1px solid var(--gray-300);
+    background: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
