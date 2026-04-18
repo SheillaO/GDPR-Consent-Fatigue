@@ -89,3 +89,36 @@ consentForm.addEventListener("submit", function (e) {
   // Show loading sequence
   showLoadingSequence(websiteName, riskScore);
 });
+
+/ ========== LOADING SEQUENCE ==========
+function showLoadingSequence(websiteName, riskScore) {
+    modalText.innerHTML = `
+    <div class="modal-inner-loading">
+        <img src="images/loading.svg" class="loading">
+        <p id="upload-text">Saving your consent...</p>
+    </div>` 
+    
+    setTimeout(function(){
+        document.getElementById('upload-text').innerText = 'Analyzing privacy risks...'
+    }, 1000)
+    
+    setTimeout(function(){
+        document.getElementById('upload-text').innerText = 'Recording dark patterns...'
+    }, 2000)
+    
+    setTimeout(function(){
+        document.getElementById('modal-inner').innerHTML = `
+        <h2>Consent Logged ✅</h2>
+        <p>We tracked <span class="modal-display-name">${websiteName}</span></p>
+        ${darkPatternTriggers > 0 ? 
+            `<p class="warning-text">⚠️ ${darkPatternTriggers} dark pattern(s) detected!</p>` : 
+            '<p class="success-text">✓ No dark patterns detected</p>'
+        }
+        <p class="risk-score">Risk Score: <strong>${riskScore}/100</strong></p>
+        <p class="info-text">Check your consent history below to manage this.</p>
+        `
+        modalCloseBtn.disabled = false
+        renderConsentHistory()
+        updateDashboardStats()
+    }, 3000)
+}
