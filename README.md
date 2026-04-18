@@ -66,3 +66,28 @@ See all your active consents in one place with:
 - **CSS3** - Clean, accessible design
 - **Vanilla JavaScript** - No frameworks, pure JS
 - **LocalStorage API** - Client-side data persistence
+
+### Key JavaScript Functions
+
+```javascript
+// Save consent to localStorage
+function saveConsent(consentData) {
+    let consents = JSON.parse(localStorage.getItem('consents')) || []
+    consents.push(consentData)
+    localStorage.setItem('consents', JSON.stringify(consents))
+}
+
+// Detect dark patterns
+declineBtn.addEventListener('mouseenter', function(){
+    modalChoiceBtns.classList.toggle('modal-btns-reverse')
+    darkPatternWarning.style.display = 'block'
+})
+
+// Revoke consent
+function deleteConsent(index) {
+    let consents = getConsents()
+    consents.splice(index, 1)
+    localStorage.setItem('consents', JSON.stringify(consents))
+    renderConsentHistory()
+}
+```
