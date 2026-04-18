@@ -55,3 +55,16 @@ main {
     line-height: 1;
     margin-bottom: 8px;
 }
+
+.stat-card.danger .stat-number { color: var(--coral); }
+.stat-card.warning .stat-number { color: var(--gold); }
+.stat-card.alert .stat-number { color: #ff6b6b; }
+
+.stat-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
