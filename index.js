@@ -291,3 +291,37 @@ function renderConsentHistory() {
     `).join('')
 }
 
+function getRiskClass(score) {
+    if (score >= 70) return 'risk-critical'
+    if (score >= 40) return 'risk-medium'
+    return 'risk-low'
+}
+
+// ========== SEARCH HANDLER ==========
+document.getElementById('search-input')?.addEventListener('input', function(e) {
+    const query = e.target.value
+    
+    if (query.length === 0) {
+        renderConsentHistory()
+        return
+    }
+    
+    const filtered = searchConsents(query)
+    renderFilteredResults(filtered)
+})
+
+function renderFilteredResults(consents) {
+    const consentList = document.getElementById('consent-list')
+    
+    if (consents.length === 0) {
+        consentList.innerHTML = '<p class="empty-state">No matching consents found.</p>'
+        return
+    }
+    
+    consentList.innerHTML = consents.map((consent, index) => `
+        <div class="consent-item">
+            <h4>${consent.website}</h4>
+            <p><strong>Risk Score:</strong> ${consent.riskScore}/100</p>
+        </div>
+    `).join('')
+}
