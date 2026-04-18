@@ -377,3 +377,50 @@ input:focus {
     color: #16a34a;
     font-weight: 600;
 }
+
+.risk-score {
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.risk-score strong {
+    color: var(--blue);
+}
+
+.info-text {
+    font-size: 14px;
+    color: var(--gray-700);
+}
+
+.modal-display-name {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.loading {
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .search-bar {
+        width: 100%;
+    }
+    
+    .modal {
+        width: 90%;
+    }
+}
