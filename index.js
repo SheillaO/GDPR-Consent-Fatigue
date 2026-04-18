@@ -349,3 +349,21 @@ const brandStyles = `
     gap: 20px;
     margin-bottom: 40px;
 }
+    .feature-item {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.feature-item h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: var(--black);
+}
