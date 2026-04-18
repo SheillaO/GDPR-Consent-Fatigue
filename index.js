@@ -405,3 +405,30 @@ const brandStyles = `
     margin-bottom: 10px;
     color: var(--gray-700);
 }
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray-700);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--gray-200);
+    margin-top: 60px;
+}
+
+footer a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+#consent-list .stat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 12px;
+    padding: 16px 24px;
+}
+`;
+
