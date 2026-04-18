@@ -325,3 +325,27 @@ function renderFilteredResults(consents) {
         </div>
     `).join('')
 }
+
+// ========== EVENT LISTENERS ==========
+document.getElementById('clear-all-btn')?.addEventListener('click', clearAllConsents)
+document.getElementById('export-json-btn')?.addEventListener('click', exportAsJSON)
+document.getElementById('export-csv-btn')?.addEventListener('click', exportAsCSV)
+document.getElementById('filter-dark-patterns')?.addEventListener('click', function() {
+    const filtered = filterByDarkPatterns()
+    renderFilteredResults(filtered)
+})
+
+// ========== INITIAL LOAD ==========
+renderConsentHistory()
+updateDashboardStats()
+trackEvent('page_loaded')
+
+
+/* ========== DYNAMIC STYLES FOR NEW CONTENT ========== */
+const brandStyles = `
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
