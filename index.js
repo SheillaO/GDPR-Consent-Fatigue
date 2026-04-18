@@ -9,3 +9,18 @@ const darkPatternWarning = document.getElementById("dark-pattern-warning");
 
 let darkPatternTriggers = 0;
 let sessionStartTime = Date.now();
+
+function trackEvent(eventName, data = {}) {
+  const event = {
+    name: eventName,
+    timestamp: new Date().toISOString(),
+    sessionDuration: Math.floor((Date.now() - sessionStartTime) / 1000),
+    ...data,
+  };
+
+  let analytics = JSON.parse(localStorage.getItem("analytics")) || [];
+  analytics.push(event);
+  localStorage.setItem("analytics", JSON.stringify(analytics));
+
+  console.log("📊 Event tracked:", event);
+}
