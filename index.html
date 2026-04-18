@@ -109,3 +109,41 @@
                             This site uses cookies to track your behavior and sell your data.
                             We promise we'll only use it for "improving your experience" 😉
                         </p>
+
+                            <form id="consent-form">
+                                <input type="text" name="websiteName" placeholder="Website name (e.g., Amazon)" required />
+                                <input type="email" name="email" placeholder="Your email" required />
+                            
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="marketing" checked>
+                                    <span>Marketing emails (we'll spam you)</span>
+                                </label>
+                            
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="analytics" checked>
+                                    <span>Analytics tracking (we'll watch you)</span>
+                                </label>
+                            
+                                <div class="modal-choice-btns" id="modal-choice-btns">
+                                    <button type="submit" class="modal-btn accept-btn">Accept All</button>
+                                    <button class="modal-btn decline-btn" id="decline-btn" type="button">Decline</button>
+                                </div>
+                            </form>
+
+                                <div class="dark-pattern-warning" id="dark-pattern-warning" style="display:none;">
+                                    <strong>⚠️ Dark Pattern Detected!</strong> The button moved to trick you.
+                                </div>
+                                </div>
+                                </div>
+                                
+                                <script src="index.js"></script>
+                                <footer style="text-align: center; padding: 40px; color: #666; font-size: 0.9rem;">
+                                    <p>2026 ConsentVault. Secure. Transparent. Open Source. Built with ❤️ by Olga – Technical Product Marketing Manager
+                                        ·</p>
+                                    <nav>
+                                        <a href="#">Privacy Policy</a> | <a href="#">API Docs</a> | <a href="#">Support</a> | <a
+                                            href="https://github.com/SheillaO/AI-Proof-Password-Generator" target="_blank"
+                                            rel="noopener noreferrer">Open-sourced on
+                                            GitHub</a> | <a href="https://ai-proof-password-generator.netlify.app/" target="_blank"
+                                            rel="noopener noreferrer">Netlify</a>
+                                    </nav>
