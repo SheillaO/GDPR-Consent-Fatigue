@@ -195,3 +195,49 @@ function sortConsents(sortBy) {
     }
 }
 
+// ========== EXPORT FUNCTIONALITY ==========
+function exportAsJSON() {
+    const consents = getConsents()
+    const dataStr = JSON.stringify(consents, null, 2)
+    const dataBlob = new Blob([dataStr], {type: 'application/json'})
+    
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(dataBlob)
+    link.download = `consents-${new Date().toISOString().split('T')[0]}.json`
+    link.click()
+    
+    trackEvent('export_json', { count: consents.length })
+}
+
+function exportAsCSV() {
+    const consents = getConsents()
+    
+    if (consents.length === 0) {
+        alert('No consents to export!')
+        return
+    }
+    
+    const headers = ['Website', 'Email', 'Marketing', 'Analytics', 'Date', 'Risk Score', 'Dark Patterns']
+    const rows = consents.map(c => [
+        c.website,
+        c.email,
+        c.marketing,
+        c.analytics,
+        c.date,
+        c.riskScore,
+        c.darkPatternTriggers
+    ])
+    
+    const csv = [headers, ...rows]
+        .map(row => row.join(','))
+        .join('\n')
+    
+    const blob = new Blob([csv], { type: 'text/csv' })
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(blob)
+    link.download = `consents-${new Date().toISOString().split('T')[0]}.csv`
+    link.click()
+    
+    trackEvent('export_csv', { count: consents.length })
+}
+
