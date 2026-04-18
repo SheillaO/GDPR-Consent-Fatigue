@@ -251,8 +251,6 @@ Frontend Developer | Nairobi, Kenya 🇰🇪
 
 <div align="center">
 
-div align="center">
-
 **ConsentVault - Because your data deserves better.**
 
 ⭐ **Star this repo if you hate cookie banners!**
