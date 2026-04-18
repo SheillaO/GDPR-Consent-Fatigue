@@ -241,3 +241,25 @@ function exportAsCSV() {
     trackEvent('export_csv', { count: consents.length })
 }
 
+// ========== DASHBOARD STATS ==========
+function updateDashboardStats() {
+    const consents = getConsents()
+    
+    if (consents.length === 0) {
+        document.getElementById('total-consents').textContent = '0'
+        document.getElementById('dark-patterns-count').textContent = '0'
+        document.getElementById('avg-risk-score').textContent = '0'
+        document.getElementById('high-risk-count').textContent = '0'
+        return
+    }
+    
+    const darkPatternCount = consents.filter(c => c.darkPatternUsed).length
+    const avgRisk = Math.round(consents.reduce((sum, c) => sum + c.riskScore, 0) / consents.length)
+    const highRiskCount = consents.filter(c => c.riskScore >= 60).length
+    
+    document.getElementById('total-consents').textContent = consents.length
+    document.getElementById('dark-patterns-count').textContent = darkPatternCount
+    document.getElementById('avg-risk-score').textContent = avgRisk
+    document.getElementById('high-risk-count').textContent = highRiskCount
+}
+
