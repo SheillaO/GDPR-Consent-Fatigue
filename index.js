@@ -263,3 +263,31 @@ function updateDashboardStats() {
     document.getElementById('high-risk-count').textContent = highRiskCount
 }
 
+// ========== RENDER CONSENT HISTORY ==========
+function renderConsentHistory() {
+    const consentList = document.getElementById('consent-list')
+    const consents = getConsents()
+    
+    if (consents.length === 0) {
+        consentList.innerHTML = '<p class="empty-state">No consents tracked yet. Accept a cookie banner to start.</p>'
+        return
+    }
+    
+    consentList.innerHTML = consents.map((consent, index) => `
+        <div class="consent-item ${consent.riskScore >= 60 ? 'high-risk' : ''}">
+            <div class="consent-header">
+                <h4>${consent.website}</h4>
+                <span class="risk-badge ${getRiskClass(consent.riskScore)}">${consent.riskScore}</span>
+            </div>
+            <p class="consent-detail"><strong>Email:</strong> ${consent.email}</p>
+            <p class="consent-detail"><strong>Marketing:</strong> ${consent.marketing} | <strong>Analytics:</strong> ${consent.analytics}</p>
+            <p class="consent-detail"><strong>Date:</strong> ${consent.date} at ${consent.time}</p>
+            ${consent.darkPatternUsed ? 
+                `<p class="dark-pattern-badge">⚠️ ${consent.darkPatternTriggers} dark pattern(s) used</p>` : 
+                '<p class="clean-badge">✓ Clean consent flow</p>'
+            }
+            <button class="revoke-btn" onclick="deleteConsent(${index})">Revoke Consent</button>
+        </div>
+    `).join('')
+}
+
