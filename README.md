@@ -250,3 +250,15 @@ Frontend Developer | Nairobi, Kenya 🇰🇪
 ---
 
 <div align="center">
+
+div align="center">
+
+**ConsentVault - Because your data deserves better.**
+
+⭐ **Star this repo if you hate cookie banners!**
+
+[Live Demo](https://gdprconsentfatigue.netlify.app/) • [Report Bug](https://github.com/SheillaO/GDPR-Consent-Fatigue) 
+
+*Built with vanilla JS, zero dependencies, 100% privacy.*
+
+</div>
