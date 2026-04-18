@@ -156,18 +156,11 @@ function deleteConsent(index) {
 ---
 
 
-## 📂 Project Structure
-consentvault/
-│
-├── index.html          # Main page with modal
-├── index.css           # Clean, accessible styles
-├── index.js            # Core consent logic
-│
-├── images/
-│   └── loading.svg     # Loading animation
-│
-├── README.md           # This file
-└── LICENSE             # MIT License
+### Architecture Notes
+
+- No framework dependencies — designed for portability and easy embedding
+- Consent state persisted via localStorage (can be swapped for cookies/server-side)
+- UI logic separated from state handling for future extensibility
 
 ---
 
