@@ -155,3 +155,25 @@ function deleteConsent(index) {
     updateDashboardStats()
 }
 
+// ========== SEARCH & FILTER ==========
+function searchConsents(query) {
+    const consents = getConsents()
+    const filtered = consents.filter(consent => 
+        consent.website.toLowerCase().includes(query.toLowerCase()) ||
+        consent.email.toLowerCase().includes(query.toLowerCase())
+    )
+    
+    trackEvent('search_performed', { query: query, results: filtered.length })
+    return filtered
+}
+
+function filterByRisk(minScore) {
+    const consents = getConsents()
+    return consents.filter(consent => consent.riskScore >= minScore)
+}
+
+function filterByDarkPatterns() {
+    const consents = getConsents()
+    return consents.filter(consent => consent.darkPatternUsed)
+}
+
