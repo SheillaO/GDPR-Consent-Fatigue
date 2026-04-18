@@ -65,3 +65,23 @@
                             <button id="export-csv-btn" class="export-btn">Export CSV</button>
                         </div>
                     </section>
+
+                    <!-- Consent History -->
+                    <section class="consent-history">
+                        <div class="section-header">
+                            <h2>Your Consent History</h2>
+                            <button id="clear-all-btn" class="danger-btn-small">Revoke All</button>
+                        </div>
+
+                        <div id="consent-list">
+                            <!-- Example of what the JS might inject -->
+                            <div class="stat-card"
+                                style="margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #eee;">
+                                <div>
+                                    <strong>social-network.com</strong>
+                                    <p style="font-size: 0.8rem; margin: 0;">Marketing & Analytics • Accepted 2023-10-14</p>
+                                </div>
+                                <span class="stat-label" style="color: #e74c3c;">High Risk</span>
+                            </div>
+                        </div>
+                        </section>
