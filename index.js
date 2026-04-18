@@ -122,3 +122,36 @@ function showLoadingSequence(websiteName, riskScore) {
         updateDashboardStats()
     }, 3000)
 }
+
+// ========== RISK SCORE CALCULATION ==========
+function calculateRiskScore(marketing, analytics, darkPatterns) {
+    let score = 0
+    
+    if (marketing === 'Yes') score += 30
+    if (analytics === 'Yes') score += 20
+    score += darkPatterns * 15
+    
+    return Math.min(score, 100)
+}
+
+// ========== CONSENT MANAGEMENT ==========
+function saveConsent(consentData) {
+    let consents = getConsents()
+    consents.push(consentData)
+    localStorage.setItem('consents', JSON.stringify(consents))
+}
+
+function getConsents() {
+    return JSON.parse(localStorage.getItem('consents')) || []
+}
+
+function deleteConsent(index) {
+    let consents = getConsents()
+    const deleted = consents.splice(index, 1)[0]
+    localStorage.setItem('consents', JSON.stringify(consents))
+    
+    trackEvent('consent_revoked', { website: deleted.website })
+    renderConsentHistory()
+    updateDashboardStats()
+}
+
