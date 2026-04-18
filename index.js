@@ -52,3 +52,29 @@ declineBtn.addEventListener('mouseenter', function(){
     }, 3000)
 }) 
 
+
+// ========== CONSENT FORM SUBMISSION ==========
+consentForm.addEventListener('submit', function(e){
+    e.preventDefault()
+    
+    const consentFormData = new FormData(consentForm)
+    const websiteName = consentFormData.get('websiteName')
+    const email = consentFormData.get('email')
+    const marketing = consentFormData.get('marketing') ? 'Yes' : 'No'
+    const analytics = consentFormData.get('analytics') ? 'Yes' : 'No'
+    
+    // Calculate risk score
+    const riskScore = calculateRiskScore(marketing, analytics, darkPatternTriggers)
+    
+    // Save consent
+    const consentData = {
+        website: websiteName,
+        email: email,
+        marketing: marketing,
+        analytics: analytics,
+        date: new Date().toLocaleDateString(),
+        time: new Date().toLocaleTimeString(),
+        darkPatternUsed: modalChoiceBtns.classList.contains('modal-btns-reverse'),
+        darkPatternTriggers: darkPatternTriggers,
+        riskScore: riskScore
+    }
