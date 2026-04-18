@@ -24,3 +24,31 @@ function trackEvent(eventName, data = {}) {
 
   console.log("📊 Event tracked:", event);
 }
+
+// ========== MODAL BEHAVIOR ==========
+setTimeout(function(){
+    modal.style.display = 'inline'
+    trackEvent('modal_shown', { delay: 1500 })
+}, 1500)
+
+modalCloseBtn.addEventListener('click', function(){
+    modal.style.display = 'none'
+    trackEvent('modal_closed', { method: 'close_button' })
+}) 
+
+// ========== DARK PATTERN DETECTION ==========
+declineBtn.addEventListener('mouseenter', function(){
+    modalChoiceBtns.classList.toggle('modal-btns-reverse')
+    darkPatternTriggers++
+    
+    darkPatternWarning.style.display = 'block'
+    trackEvent('dark_pattern_triggered', { 
+        triggerCount: darkPatternTriggers,
+        buttonMoved: true
+    })
+    
+    setTimeout(function(){
+        darkPatternWarning.style.display = 'none'
+    }, 3000)
+}) 
+
