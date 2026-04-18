@@ -357,3 +357,23 @@ input:focus {
 .modal-btns-reverse {
     flex-direction: row-reverse;
 }
+
+.dark-pattern-warning {
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+    color: #92400e;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-top: 16px;
+}
+
+.warning-text {
+    color: var(--coral);
+    font-weight: 600;
+}
+
+.success-text {
+    color: #16a34a;
+    font-weight: 600;
+}
