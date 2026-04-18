@@ -187,3 +187,73 @@ main {
     font-size: 13px;
     font-weight: 700;
 }
+
+.risk-low { background: #d1fae5; color: #065f46; }
+.risk-medium { background: #fed7aa; color: #92400e; }
+.risk-critical { background: #fecaca; color: #991b1b; }
+
+.consent-detail {
+    font-size: 14px;
+    color: var(--gray-700);
+    margin: 4px 0;
+}
+
+.dark-pattern-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #fef3c7;
+    color: #92400e;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.clean-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #d1fae5;
+    color: #065f46;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.revoke-btn {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--coral);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--gray-700);
+}
+
+/* ========== MODAL ========== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 440px;
+    height: fit-content;
+    max-height: 90vh;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.modal-close-container {
+    text-align: right;
+    padding: 16px;
+}
