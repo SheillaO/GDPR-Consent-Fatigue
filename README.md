@@ -136,3 +136,35 @@ function deleteConsent(index) {
 ✅ **User feedback** - Loading states, confirmations  
 
 ---
+
+## 🌍 Real-World Impact
+
+### Market Opportunity
+- **35M+ developers** globally need privacy tools
+- **GDPR penalties** totaled €2.9B in 2023 alone
+- **Browser extensions** for consent management get 500K+ downloads
+
+### Expansion Ideas
+1. **Browser Extension** - Auto-detect cookie banners across all sites
+2. **Export Feature** - Download consent history as CSV
+3. **Multi-language** - Translate for EU markets
+4. **API Integration** - Auto-submit GDPR deletion requests
+
+---
+
+
+## 📂 Project Structure
+consentvault/
+│
+├── index.html          # Main page with modal
+├── index.css           # Clean, accessible styles
+├── index.js            # Core consent logic
+│
+├── images/
+│   └── loading.svg     # Loading animation
+│
+├── README.md           # This file
+└── LICENSE             # MIT License
+
+---
+
